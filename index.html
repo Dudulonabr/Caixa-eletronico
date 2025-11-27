@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Calculadora de Notas</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
+        #resultado {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            white-space: pre; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Notas</h1>
+    <button onclick="calcularNotas()">Calcular Valor</button>
+    <div id="resultado">
+        
+    </div>
+ 
+    <script>
+        function calcularNotas() {
+           
+            const valorInput = prompt("Digite um valor em reais:");
+            
+            
+            let valor = parseInt(valorInput);
+            
+            
+            if (isNaN(valor) || valor < 1) {
+                document.getElementById("resultado").innerHTML = "Por favor, digite um valor válido.";
+                return;
+            }
+ 
+            let resultadoTexto = "";
+ 
+            
+            const notas = [100, 50, 20, 10, 5, 2, 1];
+ 
+            
+            for (let i = 0; i < notas.length; i++) {
+                const nota = notas[i];
+                
+                const quantidade = Math.floor(valor / nota);
+ 
+                if (quantidade > 0) {
+                    resultadoTexto += `Notas de ${nota}: ${quantidade}\n`;
+                    
+                    valor %= nota;
+                }
+            }
+ 
+            
+            document.getElementById("resultado").innerHTML = resultadoTexto;
+        }
+    </script>
+</body>
+</html>

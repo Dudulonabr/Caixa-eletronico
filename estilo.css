@@ -1,0 +1,41 @@
+html {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    background-color: #35424a;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+button {
+    background-color: #35424a;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#resultado {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    white-space: pre-wrap;
+}
+#resultado pre {
+    white-space: pre-wrap;
+}
+
